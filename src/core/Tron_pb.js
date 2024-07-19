@@ -11,13 +11,11 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import jspb from '../index';
+var jspb = require('google-protobuf');
 var goog = jspb;
-var global = function () {
-  return this || window || global || self || Function('return this')();
-}.call(null);
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
-import google_protobuf_any_pb from '../any_pb';
+var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
 goog.object.extend(proto, google_protobuf_any_pb);
 goog.exportSymbol('proto.protocol.AccountId', null, global);
 goog.exportSymbol('proto.protocol.MarketOrderDetail', null, global);
@@ -39,7 +37,7 @@ goog.exportSymbol('proto.protocol.authority', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.protocol.AccountId = function (opt_data) {
+proto.protocol.AccountId = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.protocol.AccountId, jspb.Message);
@@ -60,7 +58,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.protocol.authority = function (opt_data) {
+proto.protocol.authority = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.protocol.authority, jspb.Message);
@@ -81,7 +79,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.protocol.MarketOrderDetail = function (opt_data) {
+proto.protocol.MarketOrderDetail = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.protocol.MarketOrderDetail, jspb.Message);
@@ -102,7 +100,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.protocol.Transaction = function (opt_data) {
+proto.protocol.Transaction = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.protocol.Transaction.repeatedFields_, null);
 };
 goog.inherits(proto.protocol.Transaction, jspb.Message);
@@ -123,7 +121,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.protocol.Transaction.Contract = function (opt_data) {
+proto.protocol.Transaction.Contract = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.protocol.Transaction.Contract, jspb.Message);
@@ -144,7 +142,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.protocol.Transaction.Result = function (opt_data) {
+proto.protocol.Transaction.Result = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.protocol.Transaction.Result.repeatedFields_, null);
 };
 goog.inherits(proto.protocol.Transaction.Result, jspb.Message);
@@ -165,7 +163,7 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.protocol.Transaction.raw = function (opt_data) {
+proto.protocol.Transaction.raw = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.protocol.Transaction.raw.repeatedFields_, null);
 };
 goog.inherits(proto.protocol.Transaction.raw, jspb.Message);
@@ -177,56 +175,60 @@ if (goog.DEBUG && !COMPILED) {
   proto.protocol.Transaction.raw.displayName = 'proto.protocol.Transaction.raw';
 }
 
+
+
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.protocol.AccountId.prototype.toObject = function (opt_includeInstance) {
-    return proto.protocol.AccountId.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.protocol.AccountId.prototype.toObject = function(opt_includeInstance) {
+  return proto.protocol.AccountId.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.protocol.AccountId} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.protocol.AccountId.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    name: msg.getName_asB64(),
+    address: msg.getAddress_asB64()
   };
 
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.protocol.AccountId} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.protocol.AccountId.toObject = function (includeInstance, msg) {
-    var f,
-      obj = {
-        name: msg.getName_asB64(),
-        address: msg.getAddress_asB64()
-      };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
+
 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.protocol.AccountId}
  */
-proto.protocol.AccountId.deserializeBinary = function (bytes) {
+proto.protocol.AccountId.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.protocol.AccountId();
+  var msg = new proto.protocol.AccountId;
   return proto.protocol.AccountId.deserializeBinaryFromReader(msg, reader);
 };
+
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
@@ -235,38 +237,40 @@ proto.protocol.AccountId.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.protocol.AccountId}
  */
-proto.protocol.AccountId.deserializeBinaryFromReader = function (msg, reader) {
+proto.protocol.AccountId.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setName(value);
-        break;
-      case 2:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setAddress(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setName(value);
+      break;
+    case 2:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setAddress(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
 };
 
+
 /**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.protocol.AccountId.prototype.serializeBinary = function () {
+proto.protocol.AccountId.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.protocol.AccountId.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
+
 
 /**
  * Serializes the given message to binary data (in protobuf wire
@@ -275,34 +279,44 @@ proto.protocol.AccountId.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.protocol.AccountId.serializeBinaryToWriter = function (message, writer) {
+proto.protocol.AccountId.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getName_asU8();
   if (f.length > 0) {
-    writer.writeBytes(1, f);
+    writer.writeBytes(
+      1,
+      f
+    );
   }
   f = message.getAddress_asU8();
   if (f.length > 0) {
-    writer.writeBytes(2, f);
+    writer.writeBytes(
+      2,
+      f
+    );
   }
 };
 
+
 /**
  * optional bytes name = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.AccountId.prototype.getName = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ''));
+proto.protocol.AccountId.prototype.getName = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
+
 
 /**
  * optional bytes name = 1;
  * This is a type-conversion wrapper around `getName()`
  * @return {string}
  */
-proto.protocol.AccountId.prototype.getName_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getName()));
+proto.protocol.AccountId.prototype.getName_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getName()));
 };
+
 
 /**
  * optional bytes name = 1;
@@ -311,34 +325,40 @@ proto.protocol.AccountId.prototype.getName_asB64 = function () {
  * This is a type-conversion wrapper around `getName()`
  * @return {!Uint8Array}
  */
-proto.protocol.AccountId.prototype.getName_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getName()));
+proto.protocol.AccountId.prototype.getName_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getName()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.AccountId} returns this
  */
-proto.protocol.AccountId.prototype.setName = function (value) {
+proto.protocol.AccountId.prototype.setName = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
+
 /**
  * optional bytes address = 2;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.AccountId.prototype.getAddress = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ''));
+proto.protocol.AccountId.prototype.getAddress = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
+
 
 /**
  * optional bytes address = 2;
  * This is a type-conversion wrapper around `getAddress()`
  * @return {string}
  */
-proto.protocol.AccountId.prototype.getAddress_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getAddress()));
+proto.protocol.AccountId.prototype.getAddress_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getAddress()));
 };
+
 
 /**
  * optional bytes address = 2;
@@ -347,68 +367,76 @@ proto.protocol.AccountId.prototype.getAddress_asB64 = function () {
  * This is a type-conversion wrapper around `getAddress()`
  * @return {!Uint8Array}
  */
-proto.protocol.AccountId.prototype.getAddress_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getAddress()));
+proto.protocol.AccountId.prototype.getAddress_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getAddress()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.AccountId} returns this
  */
-proto.protocol.AccountId.prototype.setAddress = function (value) {
+proto.protocol.AccountId.prototype.setAddress = function(value) {
   return jspb.Message.setProto3BytesField(this, 2, value);
 };
 
+
+
+
+
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.protocol.authority.prototype.toObject = function (opt_includeInstance) {
-    return proto.protocol.authority.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.protocol.authority.prototype.toObject = function(opt_includeInstance) {
+  return proto.protocol.authority.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.protocol.authority} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.protocol.authority.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    account: (f = msg.getAccount()) && proto.protocol.AccountId.toObject(includeInstance, f),
+    permissionName: msg.getPermissionName_asB64()
   };
 
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.protocol.authority} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.protocol.authority.toObject = function (includeInstance, msg) {
-    var f,
-      obj = {
-        account: (f = msg.getAccount()) && proto.protocol.AccountId.toObject(includeInstance, f),
-        permissionName: msg.getPermissionName_asB64()
-      };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
+
 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.protocol.authority}
  */
-proto.protocol.authority.deserializeBinary = function (bytes) {
+proto.protocol.authority.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.protocol.authority();
+  var msg = new proto.protocol.authority;
   return proto.protocol.authority.deserializeBinaryFromReader(msg, reader);
 };
+
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
@@ -417,39 +445,41 @@ proto.protocol.authority.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.protocol.authority}
  */
-proto.protocol.authority.deserializeBinaryFromReader = function (msg, reader) {
+proto.protocol.authority.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = new proto.protocol.AccountId();
-        reader.readMessage(value, proto.protocol.AccountId.deserializeBinaryFromReader);
-        msg.setAccount(value);
-        break;
-      case 2:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setPermissionName(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = new proto.protocol.AccountId;
+      reader.readMessage(value,proto.protocol.AccountId.deserializeBinaryFromReader);
+      msg.setAccount(value);
+      break;
+    case 2:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setPermissionName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
 };
 
+
 /**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.protocol.authority.prototype.serializeBinary = function () {
+proto.protocol.authority.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.protocol.authority.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
+
 
 /**
  * Serializes the given message to binary data (in protobuf wire
@@ -458,66 +488,82 @@ proto.protocol.authority.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.protocol.authority.serializeBinaryToWriter = function (message, writer) {
+proto.protocol.authority.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getAccount();
   if (f != null) {
-    writer.writeMessage(1, f, proto.protocol.AccountId.serializeBinaryToWriter);
+    writer.writeMessage(
+      1,
+      f,
+      proto.protocol.AccountId.serializeBinaryToWriter
+    );
   }
   f = message.getPermissionName_asU8();
   if (f.length > 0) {
-    writer.writeBytes(2, f);
+    writer.writeBytes(
+      2,
+      f
+    );
   }
 };
+
 
 /**
  * optional AccountId account = 1;
  * @return {?proto.protocol.AccountId}
  */
-proto.protocol.authority.prototype.getAccount = function () {
-  return /** @type{?proto.protocol.AccountId} */ (jspb.Message.getWrapperField(this, proto.protocol.AccountId, 1));
+proto.protocol.authority.prototype.getAccount = function() {
+  return /** @type{?proto.protocol.AccountId} */ (
+    jspb.Message.getWrapperField(this, proto.protocol.AccountId, 1));
 };
+
 
 /**
  * @param {?proto.protocol.AccountId|undefined} value
  * @return {!proto.protocol.authority} returns this
- */
-proto.protocol.authority.prototype.setAccount = function (value) {
+*/
+proto.protocol.authority.prototype.setAccount = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
+
 
 /**
  * Clears the message field making it undefined.
  * @return {!proto.protocol.authority} returns this
  */
-proto.protocol.authority.prototype.clearAccount = function () {
+proto.protocol.authority.prototype.clearAccount = function() {
   return this.setAccount(undefined);
 };
+
 
 /**
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.protocol.authority.prototype.hasAccount = function () {
+proto.protocol.authority.prototype.hasAccount = function() {
   return jspb.Message.getField(this, 1) != null;
 };
+
 
 /**
  * optional bytes permission_name = 2;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.authority.prototype.getPermissionName = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ''));
+proto.protocol.authority.prototype.getPermissionName = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
+
 
 /**
  * optional bytes permission_name = 2;
  * This is a type-conversion wrapper around `getPermissionName()`
  * @return {string}
  */
-proto.protocol.authority.prototype.getPermissionName_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getPermissionName()));
+proto.protocol.authority.prototype.getPermissionName_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getPermissionName()));
 };
+
 
 /**
  * optional bytes permission_name = 2;
@@ -526,70 +572,78 @@ proto.protocol.authority.prototype.getPermissionName_asB64 = function () {
  * This is a type-conversion wrapper around `getPermissionName()`
  * @return {!Uint8Array}
  */
-proto.protocol.authority.prototype.getPermissionName_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getPermissionName()));
+proto.protocol.authority.prototype.getPermissionName_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getPermissionName()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.authority} returns this
  */
-proto.protocol.authority.prototype.setPermissionName = function (value) {
+proto.protocol.authority.prototype.setPermissionName = function(value) {
   return jspb.Message.setProto3BytesField(this, 2, value);
 };
 
+
+
+
+
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.protocol.MarketOrderDetail.prototype.toObject = function (opt_includeInstance) {
-    return proto.protocol.MarketOrderDetail.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.protocol.MarketOrderDetail.prototype.toObject = function(opt_includeInstance) {
+  return proto.protocol.MarketOrderDetail.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.protocol.MarketOrderDetail} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.protocol.MarketOrderDetail.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    makerorderid: msg.getMakerorderid_asB64(),
+    takerorderid: msg.getTakerorderid_asB64(),
+    fillsellquantity: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    fillbuyquantity: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.protocol.MarketOrderDetail} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.protocol.MarketOrderDetail.toObject = function (includeInstance, msg) {
-    var f,
-      obj = {
-        makerorderid: msg.getMakerorderid_asB64(),
-        takerorderid: msg.getTakerorderid_asB64(),
-        fillsellquantity: jspb.Message.getFieldWithDefault(msg, 3, 0),
-        fillbuyquantity: jspb.Message.getFieldWithDefault(msg, 4, 0)
-      };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
+
 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.protocol.MarketOrderDetail}
  */
-proto.protocol.MarketOrderDetail.deserializeBinary = function (bytes) {
+proto.protocol.MarketOrderDetail.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.protocol.MarketOrderDetail();
+  var msg = new proto.protocol.MarketOrderDetail;
   return proto.protocol.MarketOrderDetail.deserializeBinaryFromReader(msg, reader);
 };
+
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
@@ -598,46 +652,48 @@ proto.protocol.MarketOrderDetail.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.protocol.MarketOrderDetail}
  */
-proto.protocol.MarketOrderDetail.deserializeBinaryFromReader = function (msg, reader) {
+proto.protocol.MarketOrderDetail.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setMakerorderid(value);
-        break;
-      case 2:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setTakerorderid(value);
-        break;
-      case 3:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setFillsellquantity(value);
-        break;
-      case 4:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setFillbuyquantity(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setMakerorderid(value);
+      break;
+    case 2:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setTakerorderid(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setFillsellquantity(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setFillbuyquantity(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
 };
 
+
 /**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.protocol.MarketOrderDetail.prototype.serializeBinary = function () {
+proto.protocol.MarketOrderDetail.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.protocol.MarketOrderDetail.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
+
 
 /**
  * Serializes the given message to binary data (in protobuf wire
@@ -646,42 +702,58 @@ proto.protocol.MarketOrderDetail.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.protocol.MarketOrderDetail.serializeBinaryToWriter = function (message, writer) {
+proto.protocol.MarketOrderDetail.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMakerorderid_asU8();
   if (f.length > 0) {
-    writer.writeBytes(1, f);
+    writer.writeBytes(
+      1,
+      f
+    );
   }
   f = message.getTakerorderid_asU8();
   if (f.length > 0) {
-    writer.writeBytes(2, f);
+    writer.writeBytes(
+      2,
+      f
+    );
   }
   f = message.getFillsellquantity();
   if (f !== 0) {
-    writer.writeInt64(3, f);
+    writer.writeInt64(
+      3,
+      f
+    );
   }
   f = message.getFillbuyquantity();
   if (f !== 0) {
-    writer.writeInt64(4, f);
+    writer.writeInt64(
+      4,
+      f
+    );
   }
 };
 
+
 /**
  * optional bytes makerOrderId = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.MarketOrderDetail.prototype.getMakerorderid = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ''));
+proto.protocol.MarketOrderDetail.prototype.getMakerorderid = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
+
 
 /**
  * optional bytes makerOrderId = 1;
  * This is a type-conversion wrapper around `getMakerorderid()`
  * @return {string}
  */
-proto.protocol.MarketOrderDetail.prototype.getMakerorderid_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getMakerorderid()));
+proto.protocol.MarketOrderDetail.prototype.getMakerorderid_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getMakerorderid()));
 };
+
 
 /**
  * optional bytes makerOrderId = 1;
@@ -690,34 +762,40 @@ proto.protocol.MarketOrderDetail.prototype.getMakerorderid_asB64 = function () {
  * This is a type-conversion wrapper around `getMakerorderid()`
  * @return {!Uint8Array}
  */
-proto.protocol.MarketOrderDetail.prototype.getMakerorderid_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getMakerorderid()));
+proto.protocol.MarketOrderDetail.prototype.getMakerorderid_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getMakerorderid()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.MarketOrderDetail} returns this
  */
-proto.protocol.MarketOrderDetail.prototype.setMakerorderid = function (value) {
+proto.protocol.MarketOrderDetail.prototype.setMakerorderid = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
+
 /**
  * optional bytes takerOrderId = 2;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.MarketOrderDetail.prototype.getTakerorderid = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ''));
+proto.protocol.MarketOrderDetail.prototype.getTakerorderid = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
+
 
 /**
  * optional bytes takerOrderId = 2;
  * This is a type-conversion wrapper around `getTakerorderid()`
  * @return {string}
  */
-proto.protocol.MarketOrderDetail.prototype.getTakerorderid_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getTakerorderid()));
+proto.protocol.MarketOrderDetail.prototype.getTakerorderid_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getTakerorderid()));
 };
+
 
 /**
  * optional bytes takerOrderId = 2;
@@ -726,112 +804,121 @@ proto.protocol.MarketOrderDetail.prototype.getTakerorderid_asB64 = function () {
  * This is a type-conversion wrapper around `getTakerorderid()`
  * @return {!Uint8Array}
  */
-proto.protocol.MarketOrderDetail.prototype.getTakerorderid_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getTakerorderid()));
+proto.protocol.MarketOrderDetail.prototype.getTakerorderid_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getTakerorderid()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.MarketOrderDetail} returns this
  */
-proto.protocol.MarketOrderDetail.prototype.setTakerorderid = function (value) {
+proto.protocol.MarketOrderDetail.prototype.setTakerorderid = function(value) {
   return jspb.Message.setProto3BytesField(this, 2, value);
 };
+
 
 /**
  * optional int64 fillSellQuantity = 3;
  * @return {number}
  */
-proto.protocol.MarketOrderDetail.prototype.getFillsellquantity = function () {
+proto.protocol.MarketOrderDetail.prototype.getFillsellquantity = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.MarketOrderDetail} returns this
  */
-proto.protocol.MarketOrderDetail.prototype.setFillsellquantity = function (value) {
+proto.protocol.MarketOrderDetail.prototype.setFillsellquantity = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
+
 
 /**
  * optional int64 fillBuyQuantity = 4;
  * @return {number}
  */
-proto.protocol.MarketOrderDetail.prototype.getFillbuyquantity = function () {
+proto.protocol.MarketOrderDetail.prototype.getFillbuyquantity = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.MarketOrderDetail} returns this
  */
-proto.protocol.MarketOrderDetail.prototype.setFillbuyquantity = function (value) {
+proto.protocol.MarketOrderDetail.prototype.setFillbuyquantity = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
 };
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.protocol.Transaction.repeatedFields_ = [2, 5];
+proto.protocol.Transaction.repeatedFields_ = [2,5];
+
+
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.protocol.Transaction.prototype.toObject = function (opt_includeInstance) {
-    return proto.protocol.Transaction.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.protocol.Transaction.prototype.toObject = function(opt_includeInstance) {
+  return proto.protocol.Transaction.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.protocol.Transaction} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.protocol.Transaction.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    rawData: (f = msg.getRawData()) && proto.protocol.Transaction.raw.toObject(includeInstance, f),
+    signatureList: msg.getSignatureList_asB64(),
+    retList: jspb.Message.toObjectList(msg.getRetList(),
+    proto.protocol.Transaction.Result.toObject, includeInstance)
   };
 
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.protocol.Transaction} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.protocol.Transaction.toObject = function (includeInstance, msg) {
-    var f,
-      obj = {
-        rawData: (f = msg.getRawData()) && proto.protocol.Transaction.raw.toObject(includeInstance, f),
-        signatureList: msg.getSignatureList_asB64(),
-        retList: jspb.Message.toObjectList(
-          msg.getRetList(),
-          proto.protocol.Transaction.Result.toObject,
-          includeInstance
-        )
-      };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
+
 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.protocol.Transaction}
  */
-proto.protocol.Transaction.deserializeBinary = function (bytes) {
+proto.protocol.Transaction.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.protocol.Transaction();
+  var msg = new proto.protocol.Transaction;
   return proto.protocol.Transaction.deserializeBinaryFromReader(msg, reader);
 };
+
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
@@ -840,44 +927,46 @@ proto.protocol.Transaction.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.protocol.Transaction}
  */
-proto.protocol.Transaction.deserializeBinaryFromReader = function (msg, reader) {
+proto.protocol.Transaction.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = new proto.protocol.Transaction.raw();
-        reader.readMessage(value, proto.protocol.Transaction.raw.deserializeBinaryFromReader);
-        msg.setRawData(value);
-        break;
-      case 2:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.addSignature(value);
-        break;
-      case 5:
-        var value = new proto.protocol.Transaction.Result();
-        reader.readMessage(value, proto.protocol.Transaction.Result.deserializeBinaryFromReader);
-        msg.addRet(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = new proto.protocol.Transaction.raw;
+      reader.readMessage(value,proto.protocol.Transaction.raw.deserializeBinaryFromReader);
+      msg.setRawData(value);
+      break;
+    case 2:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.addSignature(value);
+      break;
+    case 5:
+      var value = new proto.protocol.Transaction.Result;
+      reader.readMessage(value,proto.protocol.Transaction.Result.deserializeBinaryFromReader);
+      msg.addRet(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
 };
 
+
 /**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.protocol.Transaction.prototype.serializeBinary = function () {
+proto.protocol.Transaction.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.protocol.Transaction.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
+
 
 /**
  * Serializes the given message to binary data (in protobuf wire
@@ -886,75 +975,92 @@ proto.protocol.Transaction.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.protocol.Transaction.serializeBinaryToWriter = function (message, writer) {
+proto.protocol.Transaction.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getRawData();
   if (f != null) {
-    writer.writeMessage(1, f, proto.protocol.Transaction.raw.serializeBinaryToWriter);
+    writer.writeMessage(
+      1,
+      f,
+      proto.protocol.Transaction.raw.serializeBinaryToWriter
+    );
   }
   f = message.getSignatureList_asU8();
   if (f.length > 0) {
-    writer.writeRepeatedBytes(2, f);
+    writer.writeRepeatedBytes(
+      2,
+      f
+    );
   }
   f = message.getRetList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(5, f, proto.protocol.Transaction.Result.serializeBinaryToWriter);
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.protocol.Transaction.Result.serializeBinaryToWriter
+    );
   }
 };
 
+
+
+
+
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.protocol.Transaction.Contract.prototype.toObject = function (opt_includeInstance) {
-    return proto.protocol.Transaction.Contract.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.protocol.Transaction.Contract.prototype.toObject = function(opt_includeInstance) {
+  return proto.protocol.Transaction.Contract.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.protocol.Transaction.Contract} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.protocol.Transaction.Contract.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    type: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    parameter: (f = msg.getParameter()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
+    provider: msg.getProvider_asB64(),
+    contractname: msg.getContractname_asB64(),
+    permissionId: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.protocol.Transaction.Contract} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.protocol.Transaction.Contract.toObject = function (includeInstance, msg) {
-    var f,
-      obj = {
-        type: jspb.Message.getFieldWithDefault(msg, 1, 0),
-        parameter: (f = msg.getParameter()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
-        provider: msg.getProvider_asB64(),
-        contractname: msg.getContractname_asB64(),
-        permissionId: jspb.Message.getFieldWithDefault(msg, 5, 0)
-      };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
+
 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.protocol.Transaction.Contract}
  */
-proto.protocol.Transaction.Contract.deserializeBinary = function (bytes) {
+proto.protocol.Transaction.Contract.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.protocol.Transaction.Contract();
+  var msg = new proto.protocol.Transaction.Contract;
   return proto.protocol.Transaction.Contract.deserializeBinaryFromReader(msg, reader);
 };
+
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
@@ -963,51 +1069,53 @@ proto.protocol.Transaction.Contract.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.protocol.Transaction.Contract}
  */
-proto.protocol.Transaction.Contract.deserializeBinaryFromReader = function (msg, reader) {
+proto.protocol.Transaction.Contract.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {!proto.protocol.Transaction.Contract.ContractType} */ (reader.readEnum());
-        msg.setType(value);
-        break;
-      case 2:
-        var value = new google_protobuf_any_pb.Any();
-        reader.readMessage(value, google_protobuf_any_pb.Any.deserializeBinaryFromReader);
-        msg.setParameter(value);
-        break;
-      case 3:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setProvider(value);
-        break;
-      case 4:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setContractname(value);
-        break;
-      case 5:
-        var value = /** @type {number} */ (reader.readInt32());
-        msg.setPermissionId(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {!proto.protocol.Transaction.Contract.ContractType} */ (reader.readEnum());
+      msg.setType(value);
+      break;
+    case 2:
+      var value = new google_protobuf_any_pb.Any;
+      reader.readMessage(value,google_protobuf_any_pb.Any.deserializeBinaryFromReader);
+      msg.setParameter(value);
+      break;
+    case 3:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setProvider(value);
+      break;
+    case 4:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setContractname(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPermissionId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
 };
 
+
 /**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.protocol.Transaction.Contract.prototype.serializeBinary = function () {
+proto.protocol.Transaction.Contract.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.protocol.Transaction.Contract.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
+
 
 /**
  * Serializes the given message to binary data (in protobuf wire
@@ -1016,29 +1124,46 @@ proto.protocol.Transaction.Contract.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.protocol.Transaction.Contract.serializeBinaryToWriter = function (message, writer) {
+proto.protocol.Transaction.Contract.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getType();
   if (f !== 0.0) {
-    writer.writeEnum(1, f);
+    writer.writeEnum(
+      1,
+      f
+    );
   }
   f = message.getParameter();
   if (f != null) {
-    writer.writeMessage(2, f, google_protobuf_any_pb.Any.serializeBinaryToWriter);
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_any_pb.Any.serializeBinaryToWriter
+    );
   }
   f = message.getProvider_asU8();
   if (f.length > 0) {
-    writer.writeBytes(3, f);
+    writer.writeBytes(
+      3,
+      f
+    );
   }
   f = message.getContractname_asU8();
   if (f.length > 0) {
-    writer.writeBytes(4, f);
+    writer.writeBytes(
+      4,
+      f
+    );
   }
   f = message.getPermissionId();
   if (f !== 0) {
-    writer.writeInt32(5, f);
+    writer.writeInt32(
+      5,
+      f
+    );
   }
 };
+
 
 /**
  * @enum {number}
@@ -1085,68 +1210,76 @@ proto.protocol.Transaction.Contract.ContractType = {
  * optional ContractType type = 1;
  * @return {!proto.protocol.Transaction.Contract.ContractType}
  */
-proto.protocol.Transaction.Contract.prototype.getType = function () {
-  return /** @type {!proto.protocol.Transaction.Contract.ContractType} */ (
-    jspb.Message.getFieldWithDefault(this, 1, 0)
-  );
+proto.protocol.Transaction.Contract.prototype.getType = function() {
+  return /** @type {!proto.protocol.Transaction.Contract.ContractType} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
+
 
 /**
  * @param {!proto.protocol.Transaction.Contract.ContractType} value
  * @return {!proto.protocol.Transaction.Contract} returns this
  */
-proto.protocol.Transaction.Contract.prototype.setType = function (value) {
+proto.protocol.Transaction.Contract.prototype.setType = function(value) {
   return jspb.Message.setProto3EnumField(this, 1, value);
 };
+
 
 /**
  * optional google.protobuf.Any parameter = 2;
  * @return {?proto.google.protobuf.Any}
  */
-proto.protocol.Transaction.Contract.prototype.getParameter = function () {
-  return /** @type{?proto.google.protobuf.Any} */ (jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 2));
+proto.protocol.Transaction.Contract.prototype.getParameter = function() {
+  return /** @type{?proto.google.protobuf.Any} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 2));
 };
+
 
 /**
  * @param {?proto.google.protobuf.Any|undefined} value
  * @return {!proto.protocol.Transaction.Contract} returns this
- */
-proto.protocol.Transaction.Contract.prototype.setParameter = function (value) {
+*/
+proto.protocol.Transaction.Contract.prototype.setParameter = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
+
 
 /**
  * Clears the message field making it undefined.
  * @return {!proto.protocol.Transaction.Contract} returns this
  */
-proto.protocol.Transaction.Contract.prototype.clearParameter = function () {
+proto.protocol.Transaction.Contract.prototype.clearParameter = function() {
   return this.setParameter(undefined);
 };
+
 
 /**
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.protocol.Transaction.Contract.prototype.hasParameter = function () {
+proto.protocol.Transaction.Contract.prototype.hasParameter = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
+
 /**
  * optional bytes provider = 3;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.Transaction.Contract.prototype.getProvider = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ''));
+proto.protocol.Transaction.Contract.prototype.getProvider = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
+
 
 /**
  * optional bytes provider = 3;
  * This is a type-conversion wrapper around `getProvider()`
  * @return {string}
  */
-proto.protocol.Transaction.Contract.prototype.getProvider_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getProvider()));
+proto.protocol.Transaction.Contract.prototype.getProvider_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getProvider()));
 };
+
 
 /**
  * optional bytes provider = 3;
@@ -1155,34 +1288,40 @@ proto.protocol.Transaction.Contract.prototype.getProvider_asB64 = function () {
  * This is a type-conversion wrapper around `getProvider()`
  * @return {!Uint8Array}
  */
-proto.protocol.Transaction.Contract.prototype.getProvider_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getProvider()));
+proto.protocol.Transaction.Contract.prototype.getProvider_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getProvider()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.Transaction.Contract} returns this
  */
-proto.protocol.Transaction.Contract.prototype.setProvider = function (value) {
+proto.protocol.Transaction.Contract.prototype.setProvider = function(value) {
   return jspb.Message.setProto3BytesField(this, 3, value);
 };
 
+
 /**
  * optional bytes ContractName = 4;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.Transaction.Contract.prototype.getContractname = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ''));
+proto.protocol.Transaction.Contract.prototype.getContractname = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
+
 
 /**
  * optional bytes ContractName = 4;
  * This is a type-conversion wrapper around `getContractname()`
  * @return {string}
  */
-proto.protocol.Transaction.Contract.prototype.getContractname_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getContractname()));
+proto.protocol.Transaction.Contract.prototype.getContractname_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getContractname()));
 };
+
 
 /**
  * optional bytes ContractName = 4;
@@ -1191,33 +1330,39 @@ proto.protocol.Transaction.Contract.prototype.getContractname_asB64 = function (
  * This is a type-conversion wrapper around `getContractname()`
  * @return {!Uint8Array}
  */
-proto.protocol.Transaction.Contract.prototype.getContractname_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getContractname()));
+proto.protocol.Transaction.Contract.prototype.getContractname_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getContractname()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.Transaction.Contract} returns this
  */
-proto.protocol.Transaction.Contract.prototype.setContractname = function (value) {
+proto.protocol.Transaction.Contract.prototype.setContractname = function(value) {
   return jspb.Message.setProto3BytesField(this, 4, value);
 };
+
 
 /**
  * optional int32 Permission_id = 5;
  * @return {number}
  */
-proto.protocol.Transaction.Contract.prototype.getPermissionId = function () {
+proto.protocol.Transaction.Contract.prototype.getPermissionId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.Contract} returns this
  */
-proto.protocol.Transaction.Contract.prototype.setPermissionId = function (value) {
+proto.protocol.Transaction.Contract.prototype.setPermissionId = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -1226,71 +1371,72 @@ proto.protocol.Transaction.Contract.prototype.setPermissionId = function (value)
  */
 proto.protocol.Transaction.Result.repeatedFields_ = [26];
 
+
+
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.protocol.Transaction.Result.prototype.toObject = function (opt_includeInstance) {
-    return proto.protocol.Transaction.Result.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.protocol.Transaction.Result.prototype.toObject = function(opt_includeInstance) {
+  return proto.protocol.Transaction.Result.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.protocol.Transaction.Result} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.protocol.Transaction.Result.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    fee: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    ret: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    contractret: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    assetissueid: jspb.Message.getFieldWithDefault(msg, 14, ""),
+    withdrawAmount: jspb.Message.getFieldWithDefault(msg, 15, 0),
+    unfreezeAmount: jspb.Message.getFieldWithDefault(msg, 16, 0),
+    exchangeReceivedAmount: jspb.Message.getFieldWithDefault(msg, 18, 0),
+    exchangeInjectAnotherAmount: jspb.Message.getFieldWithDefault(msg, 19, 0),
+    exchangeWithdrawAnotherAmount: jspb.Message.getFieldWithDefault(msg, 20, 0),
+    exchangeId: jspb.Message.getFieldWithDefault(msg, 21, 0),
+    shieldedTransactionFee: jspb.Message.getFieldWithDefault(msg, 22, 0),
+    orderid: msg.getOrderid_asB64(),
+    orderdetailsList: jspb.Message.toObjectList(msg.getOrderdetailsList(),
+    proto.protocol.MarketOrderDetail.toObject, includeInstance)
   };
 
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.protocol.Transaction.Result} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.protocol.Transaction.Result.toObject = function (includeInstance, msg) {
-    var f,
-      obj = {
-        fee: jspb.Message.getFieldWithDefault(msg, 1, 0),
-        ret: jspb.Message.getFieldWithDefault(msg, 2, 0),
-        contractret: jspb.Message.getFieldWithDefault(msg, 3, 0),
-        assetissueid: jspb.Message.getFieldWithDefault(msg, 14, ''),
-        withdrawAmount: jspb.Message.getFieldWithDefault(msg, 15, 0),
-        unfreezeAmount: jspb.Message.getFieldWithDefault(msg, 16, 0),
-        exchangeReceivedAmount: jspb.Message.getFieldWithDefault(msg, 18, 0),
-        exchangeInjectAnotherAmount: jspb.Message.getFieldWithDefault(msg, 19, 0),
-        exchangeWithdrawAnotherAmount: jspb.Message.getFieldWithDefault(msg, 20, 0),
-        exchangeId: jspb.Message.getFieldWithDefault(msg, 21, 0),
-        shieldedTransactionFee: jspb.Message.getFieldWithDefault(msg, 22, 0),
-        orderid: msg.getOrderid_asB64(),
-        orderdetailsList: jspb.Message.toObjectList(
-          msg.getOrderdetailsList(),
-          proto.protocol.MarketOrderDetail.toObject,
-          includeInstance
-        )
-      };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
+
 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.protocol.Transaction.Result}
  */
-proto.protocol.Transaction.Result.deserializeBinary = function (bytes) {
+proto.protocol.Transaction.Result.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.protocol.Transaction.Result();
+  var msg = new proto.protocol.Transaction.Result;
   return proto.protocol.Transaction.Result.deserializeBinaryFromReader(msg, reader);
 };
+
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
@@ -1299,83 +1445,85 @@ proto.protocol.Transaction.Result.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.protocol.Transaction.Result}
  */
-proto.protocol.Transaction.Result.deserializeBinaryFromReader = function (msg, reader) {
+proto.protocol.Transaction.Result.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setFee(value);
-        break;
-      case 2:
-        var value = /** @type {!proto.protocol.Transaction.Result.code} */ (reader.readEnum());
-        msg.setRet(value);
-        break;
-      case 3:
-        var value = /** @type {!proto.protocol.Transaction.Result.contractResult} */ (reader.readEnum());
-        msg.setContractret(value);
-        break;
-      case 14:
-        var value = /** @type {string} */ (reader.readString());
-        msg.setAssetissueid(value);
-        break;
-      case 15:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setWithdrawAmount(value);
-        break;
-      case 16:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setUnfreezeAmount(value);
-        break;
-      case 18:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setExchangeReceivedAmount(value);
-        break;
-      case 19:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setExchangeInjectAnotherAmount(value);
-        break;
-      case 20:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setExchangeWithdrawAnotherAmount(value);
-        break;
-      case 21:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setExchangeId(value);
-        break;
-      case 22:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setShieldedTransactionFee(value);
-        break;
-      case 25:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setOrderid(value);
-        break;
-      case 26:
-        var value = new proto.protocol.MarketOrderDetail();
-        reader.readMessage(value, proto.protocol.MarketOrderDetail.deserializeBinaryFromReader);
-        msg.addOrderdetails(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setFee(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.protocol.Transaction.Result.code} */ (reader.readEnum());
+      msg.setRet(value);
+      break;
+    case 3:
+      var value = /** @type {!proto.protocol.Transaction.Result.contractResult} */ (reader.readEnum());
+      msg.setContractret(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssetissueid(value);
+      break;
+    case 15:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setWithdrawAmount(value);
+      break;
+    case 16:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setUnfreezeAmount(value);
+      break;
+    case 18:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setExchangeReceivedAmount(value);
+      break;
+    case 19:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setExchangeInjectAnotherAmount(value);
+      break;
+    case 20:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setExchangeWithdrawAnotherAmount(value);
+      break;
+    case 21:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setExchangeId(value);
+      break;
+    case 22:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setShieldedTransactionFee(value);
+      break;
+    case 25:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setOrderid(value);
+      break;
+    case 26:
+      var value = new proto.protocol.MarketOrderDetail;
+      reader.readMessage(value,proto.protocol.MarketOrderDetail.deserializeBinaryFromReader);
+      msg.addOrderdetails(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
 };
 
+
 /**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.protocol.Transaction.Result.prototype.serializeBinary = function () {
+proto.protocol.Transaction.Result.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.protocol.Transaction.Result.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
+
 
 /**
  * Serializes the given message to binary data (in protobuf wire
@@ -1384,61 +1532,102 @@ proto.protocol.Transaction.Result.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.protocol.Transaction.Result.serializeBinaryToWriter = function (message, writer) {
+proto.protocol.Transaction.Result.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getFee();
   if (f !== 0) {
-    writer.writeInt64(1, f);
+    writer.writeInt64(
+      1,
+      f
+    );
   }
   f = message.getRet();
   if (f !== 0.0) {
-    writer.writeEnum(2, f);
+    writer.writeEnum(
+      2,
+      f
+    );
   }
   f = message.getContractret();
   if (f !== 0.0) {
-    writer.writeEnum(3, f);
+    writer.writeEnum(
+      3,
+      f
+    );
   }
   f = message.getAssetissueid();
   if (f.length > 0) {
-    writer.writeString(14, f);
+    writer.writeString(
+      14,
+      f
+    );
   }
   f = message.getWithdrawAmount();
   if (f !== 0) {
-    writer.writeInt64(15, f);
+    writer.writeInt64(
+      15,
+      f
+    );
   }
   f = message.getUnfreezeAmount();
   if (f !== 0) {
-    writer.writeInt64(16, f);
+    writer.writeInt64(
+      16,
+      f
+    );
   }
   f = message.getExchangeReceivedAmount();
   if (f !== 0) {
-    writer.writeInt64(18, f);
+    writer.writeInt64(
+      18,
+      f
+    );
   }
   f = message.getExchangeInjectAnotherAmount();
   if (f !== 0) {
-    writer.writeInt64(19, f);
+    writer.writeInt64(
+      19,
+      f
+    );
   }
   f = message.getExchangeWithdrawAnotherAmount();
   if (f !== 0) {
-    writer.writeInt64(20, f);
+    writer.writeInt64(
+      20,
+      f
+    );
   }
   f = message.getExchangeId();
   if (f !== 0) {
-    writer.writeInt64(21, f);
+    writer.writeInt64(
+      21,
+      f
+    );
   }
   f = message.getShieldedTransactionFee();
   if (f !== 0) {
-    writer.writeInt64(22, f);
+    writer.writeInt64(
+      22,
+      f
+    );
   }
   f = message.getOrderid_asU8();
   if (f.length > 0) {
-    writer.writeBytes(25, f);
+    writer.writeBytes(
+      25,
+      f
+    );
   }
   f = message.getOrderdetailsList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(26, f, proto.protocol.MarketOrderDetail.serializeBinaryToWriter);
+    writer.writeRepeatedMessage(
+      26,
+      f,
+      proto.protocol.MarketOrderDetail.serializeBinaryToWriter
+    );
   }
 };
+
 
 /**
  * @enum {number}
@@ -1474,196 +1663,219 @@ proto.protocol.Transaction.Result.contractResult = {
  * optional int64 fee = 1;
  * @return {number}
  */
-proto.protocol.Transaction.Result.prototype.getFee = function () {
+proto.protocol.Transaction.Result.prototype.getFee = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setFee = function (value) {
+proto.protocol.Transaction.Result.prototype.setFee = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
+
 
 /**
  * optional code ret = 2;
  * @return {!proto.protocol.Transaction.Result.code}
  */
-proto.protocol.Transaction.Result.prototype.getRet = function () {
+proto.protocol.Transaction.Result.prototype.getRet = function() {
   return /** @type {!proto.protocol.Transaction.Result.code} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
+
 
 /**
  * @param {!proto.protocol.Transaction.Result.code} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setRet = function (value) {
+proto.protocol.Transaction.Result.prototype.setRet = function(value) {
   return jspb.Message.setProto3EnumField(this, 2, value);
 };
+
 
 /**
  * optional contractResult contractRet = 3;
  * @return {!proto.protocol.Transaction.Result.contractResult}
  */
-proto.protocol.Transaction.Result.prototype.getContractret = function () {
-  return /** @type {!proto.protocol.Transaction.Result.contractResult} */ (
-    jspb.Message.getFieldWithDefault(this, 3, 0)
-  );
+proto.protocol.Transaction.Result.prototype.getContractret = function() {
+  return /** @type {!proto.protocol.Transaction.Result.contractResult} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
+
 
 /**
  * @param {!proto.protocol.Transaction.Result.contractResult} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setContractret = function (value) {
+proto.protocol.Transaction.Result.prototype.setContractret = function(value) {
   return jspb.Message.setProto3EnumField(this, 3, value);
 };
+
 
 /**
  * optional string assetIssueID = 14;
  * @return {string}
  */
-proto.protocol.Transaction.Result.prototype.getAssetissueid = function () {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ''));
+proto.protocol.Transaction.Result.prototype.getAssetissueid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
+
 
 /**
  * @param {string} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setAssetissueid = function (value) {
+proto.protocol.Transaction.Result.prototype.setAssetissueid = function(value) {
   return jspb.Message.setProto3StringField(this, 14, value);
 };
+
 
 /**
  * optional int64 withdraw_amount = 15;
  * @return {number}
  */
-proto.protocol.Transaction.Result.prototype.getWithdrawAmount = function () {
+proto.protocol.Transaction.Result.prototype.getWithdrawAmount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setWithdrawAmount = function (value) {
+proto.protocol.Transaction.Result.prototype.setWithdrawAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 15, value);
 };
+
 
 /**
  * optional int64 unfreeze_amount = 16;
  * @return {number}
  */
-proto.protocol.Transaction.Result.prototype.getUnfreezeAmount = function () {
+proto.protocol.Transaction.Result.prototype.getUnfreezeAmount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setUnfreezeAmount = function (value) {
+proto.protocol.Transaction.Result.prototype.setUnfreezeAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 16, value);
 };
+
 
 /**
  * optional int64 exchange_received_amount = 18;
  * @return {number}
  */
-proto.protocol.Transaction.Result.prototype.getExchangeReceivedAmount = function () {
+proto.protocol.Transaction.Result.prototype.getExchangeReceivedAmount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setExchangeReceivedAmount = function (value) {
+proto.protocol.Transaction.Result.prototype.setExchangeReceivedAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 18, value);
 };
+
 
 /**
  * optional int64 exchange_inject_another_amount = 19;
  * @return {number}
  */
-proto.protocol.Transaction.Result.prototype.getExchangeInjectAnotherAmount = function () {
+proto.protocol.Transaction.Result.prototype.getExchangeInjectAnotherAmount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setExchangeInjectAnotherAmount = function (value) {
+proto.protocol.Transaction.Result.prototype.setExchangeInjectAnotherAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 19, value);
 };
+
 
 /**
  * optional int64 exchange_withdraw_another_amount = 20;
  * @return {number}
  */
-proto.protocol.Transaction.Result.prototype.getExchangeWithdrawAnotherAmount = function () {
+proto.protocol.Transaction.Result.prototype.getExchangeWithdrawAnotherAmount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setExchangeWithdrawAnotherAmount = function (value) {
+proto.protocol.Transaction.Result.prototype.setExchangeWithdrawAnotherAmount = function(value) {
   return jspb.Message.setProto3IntField(this, 20, value);
 };
+
 
 /**
  * optional int64 exchange_id = 21;
  * @return {number}
  */
-proto.protocol.Transaction.Result.prototype.getExchangeId = function () {
+proto.protocol.Transaction.Result.prototype.getExchangeId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 21, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setExchangeId = function (value) {
+proto.protocol.Transaction.Result.prototype.setExchangeId = function(value) {
   return jspb.Message.setProto3IntField(this, 21, value);
 };
+
 
 /**
  * optional int64 shielded_transaction_fee = 22;
  * @return {number}
  */
-proto.protocol.Transaction.Result.prototype.getShieldedTransactionFee = function () {
+proto.protocol.Transaction.Result.prototype.getShieldedTransactionFee = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 22, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setShieldedTransactionFee = function (value) {
+proto.protocol.Transaction.Result.prototype.setShieldedTransactionFee = function(value) {
   return jspb.Message.setProto3IntField(this, 22, value);
 };
+
 
 /**
  * optional bytes orderId = 25;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.Transaction.Result.prototype.getOrderid = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 25, ''));
+proto.protocol.Transaction.Result.prototype.getOrderid = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
 };
+
 
 /**
  * optional bytes orderId = 25;
  * This is a type-conversion wrapper around `getOrderid()`
  * @return {string}
  */
-proto.protocol.Transaction.Result.prototype.getOrderid_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getOrderid()));
+proto.protocol.Transaction.Result.prototype.getOrderid_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getOrderid()));
 };
+
 
 /**
  * optional bytes orderId = 25;
@@ -1672,122 +1884,131 @@ proto.protocol.Transaction.Result.prototype.getOrderid_asB64 = function () {
  * This is a type-conversion wrapper around `getOrderid()`
  * @return {!Uint8Array}
  */
-proto.protocol.Transaction.Result.prototype.getOrderid_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getOrderid()));
+proto.protocol.Transaction.Result.prototype.getOrderid_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getOrderid()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.setOrderid = function (value) {
+proto.protocol.Transaction.Result.prototype.setOrderid = function(value) {
   return jspb.Message.setProto3BytesField(this, 25, value);
 };
+
 
 /**
  * repeated MarketOrderDetail orderDetails = 26;
  * @return {!Array<!proto.protocol.MarketOrderDetail>}
  */
-proto.protocol.Transaction.Result.prototype.getOrderdetailsList = function () {
+proto.protocol.Transaction.Result.prototype.getOrderdetailsList = function() {
   return /** @type{!Array<!proto.protocol.MarketOrderDetail>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.protocol.MarketOrderDetail, 26)
-  );
+    jspb.Message.getRepeatedWrapperField(this, proto.protocol.MarketOrderDetail, 26));
 };
+
 
 /**
  * @param {!Array<!proto.protocol.MarketOrderDetail>} value
  * @return {!proto.protocol.Transaction.Result} returns this
- */
-proto.protocol.Transaction.Result.prototype.setOrderdetailsList = function (value) {
+*/
+proto.protocol.Transaction.Result.prototype.setOrderdetailsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 26, value);
 };
+
 
 /**
  * @param {!proto.protocol.MarketOrderDetail=} opt_value
  * @param {number=} opt_index
  * @return {!proto.protocol.MarketOrderDetail}
  */
-proto.protocol.Transaction.Result.prototype.addOrderdetails = function (opt_value, opt_index) {
+proto.protocol.Transaction.Result.prototype.addOrderdetails = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 26, opt_value, proto.protocol.MarketOrderDetail, opt_index);
 };
+
 
 /**
  * Clears the list making it empty but non-null.
  * @return {!proto.protocol.Transaction.Result} returns this
  */
-proto.protocol.Transaction.Result.prototype.clearOrderdetailsList = function () {
+proto.protocol.Transaction.Result.prototype.clearOrderdetailsList = function() {
   return this.setOrderdetailsList([]);
 };
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.protocol.Transaction.raw.repeatedFields_ = [9, 11];
+proto.protocol.Transaction.raw.repeatedFields_ = [9,11];
+
+
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.protocol.Transaction.raw.prototype.toObject = function (opt_includeInstance) {
-    return proto.protocol.Transaction.raw.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.protocol.Transaction.raw.prototype.toObject = function(opt_includeInstance) {
+  return proto.protocol.Transaction.raw.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.protocol.Transaction.raw} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.protocol.Transaction.raw.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    refBlockBytes: msg.getRefBlockBytes_asB64(),
+    refBlockNum: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    refBlockHash: msg.getRefBlockHash_asB64(),
+    expiration: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    authsList: jspb.Message.toObjectList(msg.getAuthsList(),
+    proto.protocol.authority.toObject, includeInstance),
+    data: msg.getData_asB64(),
+    contractList: jspb.Message.toObjectList(msg.getContractList(),
+    proto.protocol.Transaction.Contract.toObject, includeInstance),
+    scripts: msg.getScripts_asB64(),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 14, 0),
+    feeLimit: jspb.Message.getFieldWithDefault(msg, 18, 0)
   };
 
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.protocol.Transaction.raw} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.protocol.Transaction.raw.toObject = function (includeInstance, msg) {
-    var f,
-      obj = {
-        refBlockBytes: msg.getRefBlockBytes_asB64(),
-        refBlockNum: jspb.Message.getFieldWithDefault(msg, 3, 0),
-        refBlockHash: msg.getRefBlockHash_asB64(),
-        expiration: jspb.Message.getFieldWithDefault(msg, 8, 0),
-        authsList: jspb.Message.toObjectList(msg.getAuthsList(), proto.protocol.authority.toObject, includeInstance),
-        data: msg.getData_asB64(),
-        contractList: jspb.Message.toObjectList(
-          msg.getContractList(),
-          proto.protocol.Transaction.Contract.toObject,
-          includeInstance
-        ),
-        scripts: msg.getScripts_asB64(),
-        timestamp: jspb.Message.getFieldWithDefault(msg, 14, 0),
-        feeLimit: jspb.Message.getFieldWithDefault(msg, 18, 0)
-      };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
+
 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.protocol.Transaction.raw}
  */
-proto.protocol.Transaction.raw.deserializeBinary = function (bytes) {
+proto.protocol.Transaction.raw.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.protocol.Transaction.raw();
+  var msg = new proto.protocol.Transaction.raw;
   return proto.protocol.Transaction.raw.deserializeBinaryFromReader(msg, reader);
 };
+
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
@@ -1796,72 +2017,74 @@ proto.protocol.Transaction.raw.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.protocol.Transaction.raw}
  */
-proto.protocol.Transaction.raw.deserializeBinaryFromReader = function (msg, reader) {
+proto.protocol.Transaction.raw.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setRefBlockBytes(value);
-        break;
-      case 3:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setRefBlockNum(value);
-        break;
-      case 4:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setRefBlockHash(value);
-        break;
-      case 8:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setExpiration(value);
-        break;
-      case 9:
-        var value = new proto.protocol.authority();
-        reader.readMessage(value, proto.protocol.authority.deserializeBinaryFromReader);
-        msg.addAuths(value);
-        break;
-      case 10:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setData(value);
-        break;
-      case 11:
-        var value = new proto.protocol.Transaction.Contract();
-        reader.readMessage(value, proto.protocol.Transaction.Contract.deserializeBinaryFromReader);
-        msg.addContract(value);
-        break;
-      case 12:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setScripts(value);
-        break;
-      case 14:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setTimestamp(value);
-        break;
-      case 18:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setFeeLimit(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setRefBlockBytes(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setRefBlockNum(value);
+      break;
+    case 4:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setRefBlockHash(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setExpiration(value);
+      break;
+    case 9:
+      var value = new proto.protocol.authority;
+      reader.readMessage(value,proto.protocol.authority.deserializeBinaryFromReader);
+      msg.addAuths(value);
+      break;
+    case 10:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setData(value);
+      break;
+    case 11:
+      var value = new proto.protocol.Transaction.Contract;
+      reader.readMessage(value,proto.protocol.Transaction.Contract.deserializeBinaryFromReader);
+      msg.addContract(value);
+      break;
+    case 12:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setScripts(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTimestamp(value);
+      break;
+    case 18:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setFeeLimit(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
 };
 
+
 /**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.protocol.Transaction.raw.prototype.serializeBinary = function () {
+proto.protocol.Transaction.raw.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.protocol.Transaction.raw.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
+
 
 /**
  * Serializes the given message to binary data (in protobuf wire
@@ -1870,66 +2093,102 @@ proto.protocol.Transaction.raw.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.protocol.Transaction.raw.serializeBinaryToWriter = function (message, writer) {
+proto.protocol.Transaction.raw.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getRefBlockBytes_asU8();
   if (f.length > 0) {
-    writer.writeBytes(1, f);
+    writer.writeBytes(
+      1,
+      f
+    );
   }
   f = message.getRefBlockNum();
   if (f !== 0) {
-    writer.writeInt64(3, f);
+    writer.writeInt64(
+      3,
+      f
+    );
   }
   f = message.getRefBlockHash_asU8();
   if (f.length > 0) {
-    writer.writeBytes(4, f);
+    writer.writeBytes(
+      4,
+      f
+    );
   }
   f = message.getExpiration();
   if (f !== 0) {
-    writer.writeInt64(8, f);
+    writer.writeInt64(
+      8,
+      f
+    );
   }
   f = message.getAuthsList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(9, f, proto.protocol.authority.serializeBinaryToWriter);
+    writer.writeRepeatedMessage(
+      9,
+      f,
+      proto.protocol.authority.serializeBinaryToWriter
+    );
   }
   f = message.getData_asU8();
   if (f.length > 0) {
-    writer.writeBytes(10, f);
+    writer.writeBytes(
+      10,
+      f
+    );
   }
   f = message.getContractList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(11, f, proto.protocol.Transaction.Contract.serializeBinaryToWriter);
+    writer.writeRepeatedMessage(
+      11,
+      f,
+      proto.protocol.Transaction.Contract.serializeBinaryToWriter
+    );
   }
   f = message.getScripts_asU8();
   if (f.length > 0) {
-    writer.writeBytes(12, f);
+    writer.writeBytes(
+      12,
+      f
+    );
   }
   f = message.getTimestamp();
   if (f !== 0) {
-    writer.writeInt64(14, f);
+    writer.writeInt64(
+      14,
+      f
+    );
   }
   f = message.getFeeLimit();
   if (f !== 0) {
-    writer.writeInt64(18, f);
+    writer.writeInt64(
+      18,
+      f
+    );
   }
 };
+
 
 /**
  * optional bytes ref_block_bytes = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.Transaction.raw.prototype.getRefBlockBytes = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ''));
+proto.protocol.Transaction.raw.prototype.getRefBlockBytes = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
+
 
 /**
  * optional bytes ref_block_bytes = 1;
  * This is a type-conversion wrapper around `getRefBlockBytes()`
  * @return {string}
  */
-proto.protocol.Transaction.raw.prototype.getRefBlockBytes_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getRefBlockBytes()));
+proto.protocol.Transaction.raw.prototype.getRefBlockBytes_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getRefBlockBytes()));
 };
+
 
 /**
  * optional bytes ref_block_bytes = 1;
@@ -1938,50 +2197,58 @@ proto.protocol.Transaction.raw.prototype.getRefBlockBytes_asB64 = function () {
  * This is a type-conversion wrapper around `getRefBlockBytes()`
  * @return {!Uint8Array}
  */
-proto.protocol.Transaction.raw.prototype.getRefBlockBytes_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getRefBlockBytes()));
+proto.protocol.Transaction.raw.prototype.getRefBlockBytes_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getRefBlockBytes()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.Transaction.raw} returns this
  */
-proto.protocol.Transaction.raw.prototype.setRefBlockBytes = function (value) {
+proto.protocol.Transaction.raw.prototype.setRefBlockBytes = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
+
 
 /**
  * optional int64 ref_block_num = 3;
  * @return {number}
  */
-proto.protocol.Transaction.raw.prototype.getRefBlockNum = function () {
+proto.protocol.Transaction.raw.prototype.getRefBlockNum = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.raw} returns this
  */
-proto.protocol.Transaction.raw.prototype.setRefBlockNum = function (value) {
+proto.protocol.Transaction.raw.prototype.setRefBlockNum = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
+
 
 /**
  * optional bytes ref_block_hash = 4;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.Transaction.raw.prototype.getRefBlockHash = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ''));
+proto.protocol.Transaction.raw.prototype.getRefBlockHash = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
+
 
 /**
  * optional bytes ref_block_hash = 4;
  * This is a type-conversion wrapper around `getRefBlockHash()`
  * @return {string}
  */
-proto.protocol.Transaction.raw.prototype.getRefBlockHash_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getRefBlockHash()));
+proto.protocol.Transaction.raw.prototype.getRefBlockHash_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getRefBlockHash()));
 };
+
 
 /**
  * optional bytes ref_block_hash = 4;
@@ -1990,85 +2257,96 @@ proto.protocol.Transaction.raw.prototype.getRefBlockHash_asB64 = function () {
  * This is a type-conversion wrapper around `getRefBlockHash()`
  * @return {!Uint8Array}
  */
-proto.protocol.Transaction.raw.prototype.getRefBlockHash_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getRefBlockHash()));
+proto.protocol.Transaction.raw.prototype.getRefBlockHash_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getRefBlockHash()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.Transaction.raw} returns this
  */
-proto.protocol.Transaction.raw.prototype.setRefBlockHash = function (value) {
+proto.protocol.Transaction.raw.prototype.setRefBlockHash = function(value) {
   return jspb.Message.setProto3BytesField(this, 4, value);
 };
+
 
 /**
  * optional int64 expiration = 8;
  * @return {number}
  */
-proto.protocol.Transaction.raw.prototype.getExpiration = function () {
+proto.protocol.Transaction.raw.prototype.getExpiration = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.raw} returns this
  */
-proto.protocol.Transaction.raw.prototype.setExpiration = function (value) {
+proto.protocol.Transaction.raw.prototype.setExpiration = function(value) {
   return jspb.Message.setProto3IntField(this, 8, value);
 };
+
 
 /**
  * repeated authority auths = 9;
  * @return {!Array<!proto.protocol.authority>}
  */
-proto.protocol.Transaction.raw.prototype.getAuthsList = function () {
+proto.protocol.Transaction.raw.prototype.getAuthsList = function() {
   return /** @type{!Array<!proto.protocol.authority>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.protocol.authority, 9)
-  );
+    jspb.Message.getRepeatedWrapperField(this, proto.protocol.authority, 9));
 };
+
 
 /**
  * @param {!Array<!proto.protocol.authority>} value
  * @return {!proto.protocol.Transaction.raw} returns this
- */
-proto.protocol.Transaction.raw.prototype.setAuthsList = function (value) {
+*/
+proto.protocol.Transaction.raw.prototype.setAuthsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
+
 
 /**
  * @param {!proto.protocol.authority=} opt_value
  * @param {number=} opt_index
  * @return {!proto.protocol.authority}
  */
-proto.protocol.Transaction.raw.prototype.addAuths = function (opt_value, opt_index) {
+proto.protocol.Transaction.raw.prototype.addAuths = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.protocol.authority, opt_index);
 };
+
 
 /**
  * Clears the list making it empty but non-null.
  * @return {!proto.protocol.Transaction.raw} returns this
  */
-proto.protocol.Transaction.raw.prototype.clearAuthsList = function () {
+proto.protocol.Transaction.raw.prototype.clearAuthsList = function() {
   return this.setAuthsList([]);
 };
+
 
 /**
  * optional bytes data = 10;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.Transaction.raw.prototype.getData = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 10, ''));
+proto.protocol.Transaction.raw.prototype.getData = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
+
 
 /**
  * optional bytes data = 10;
  * This is a type-conversion wrapper around `getData()`
  * @return {string}
  */
-proto.protocol.Transaction.raw.prototype.getData_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getData()));
+proto.protocol.Transaction.raw.prototype.getData_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getData()));
 };
+
 
 /**
  * optional bytes data = 10;
@@ -2077,69 +2355,78 @@ proto.protocol.Transaction.raw.prototype.getData_asB64 = function () {
  * This is a type-conversion wrapper around `getData()`
  * @return {!Uint8Array}
  */
-proto.protocol.Transaction.raw.prototype.getData_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getData()));
+proto.protocol.Transaction.raw.prototype.getData_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getData()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.Transaction.raw} returns this
  */
-proto.protocol.Transaction.raw.prototype.setData = function (value) {
+proto.protocol.Transaction.raw.prototype.setData = function(value) {
   return jspb.Message.setProto3BytesField(this, 10, value);
 };
+
 
 /**
  * repeated Contract contract = 11;
  * @return {!Array<!proto.protocol.Transaction.Contract>}
  */
-proto.protocol.Transaction.raw.prototype.getContractList = function () {
+proto.protocol.Transaction.raw.prototype.getContractList = function() {
   return /** @type{!Array<!proto.protocol.Transaction.Contract>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.protocol.Transaction.Contract, 11)
-  );
+    jspb.Message.getRepeatedWrapperField(this, proto.protocol.Transaction.Contract, 11));
 };
+
 
 /**
  * @param {!Array<!proto.protocol.Transaction.Contract>} value
  * @return {!proto.protocol.Transaction.raw} returns this
- */
-proto.protocol.Transaction.raw.prototype.setContractList = function (value) {
+*/
+proto.protocol.Transaction.raw.prototype.setContractList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 11, value);
 };
+
 
 /**
  * @param {!proto.protocol.Transaction.Contract=} opt_value
  * @param {number=} opt_index
  * @return {!proto.protocol.Transaction.Contract}
  */
-proto.protocol.Transaction.raw.prototype.addContract = function (opt_value, opt_index) {
+proto.protocol.Transaction.raw.prototype.addContract = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.protocol.Transaction.Contract, opt_index);
 };
+
 
 /**
  * Clears the list making it empty but non-null.
  * @return {!proto.protocol.Transaction.raw} returns this
  */
-proto.protocol.Transaction.raw.prototype.clearContractList = function () {
+proto.protocol.Transaction.raw.prototype.clearContractList = function() {
   return this.setContractList([]);
 };
+
 
 /**
  * optional bytes scripts = 12;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.Transaction.raw.prototype.getScripts = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 12, ''));
+proto.protocol.Transaction.raw.prototype.getScripts = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
+
 
 /**
  * optional bytes scripts = 12;
  * This is a type-conversion wrapper around `getScripts()`
  * @return {string}
  */
-proto.protocol.Transaction.raw.prototype.getScripts_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getScripts()));
+proto.protocol.Transaction.raw.prototype.getScripts_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getScripts()));
 };
+
 
 /**
  * optional bytes scripts = 12;
@@ -2148,100 +2435,113 @@ proto.protocol.Transaction.raw.prototype.getScripts_asB64 = function () {
  * This is a type-conversion wrapper around `getScripts()`
  * @return {!Uint8Array}
  */
-proto.protocol.Transaction.raw.prototype.getScripts_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getScripts()));
+proto.protocol.Transaction.raw.prototype.getScripts_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getScripts()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.Transaction.raw} returns this
  */
-proto.protocol.Transaction.raw.prototype.setScripts = function (value) {
+proto.protocol.Transaction.raw.prototype.setScripts = function(value) {
   return jspb.Message.setProto3BytesField(this, 12, value);
 };
+
 
 /**
  * optional int64 timestamp = 14;
  * @return {number}
  */
-proto.protocol.Transaction.raw.prototype.getTimestamp = function () {
+proto.protocol.Transaction.raw.prototype.getTimestamp = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.raw} returns this
  */
-proto.protocol.Transaction.raw.prototype.setTimestamp = function (value) {
+proto.protocol.Transaction.raw.prototype.setTimestamp = function(value) {
   return jspb.Message.setProto3IntField(this, 14, value);
 };
+
 
 /**
  * optional int64 fee_limit = 18;
  * @return {number}
  */
-proto.protocol.Transaction.raw.prototype.getFeeLimit = function () {
+proto.protocol.Transaction.raw.prototype.getFeeLimit = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.Transaction.raw} returns this
  */
-proto.protocol.Transaction.raw.prototype.setFeeLimit = function (value) {
+proto.protocol.Transaction.raw.prototype.setFeeLimit = function(value) {
   return jspb.Message.setProto3IntField(this, 18, value);
 };
+
 
 /**
  * optional raw raw_data = 1;
  * @return {?proto.protocol.Transaction.raw}
  */
-proto.protocol.Transaction.prototype.getRawData = function () {
+proto.protocol.Transaction.prototype.getRawData = function() {
   return /** @type{?proto.protocol.Transaction.raw} */ (
-    jspb.Message.getWrapperField(this, proto.protocol.Transaction.raw, 1)
-  );
+    jspb.Message.getWrapperField(this, proto.protocol.Transaction.raw, 1));
 };
+
 
 /**
  * @param {?proto.protocol.Transaction.raw|undefined} value
  * @return {!proto.protocol.Transaction} returns this
- */
-proto.protocol.Transaction.prototype.setRawData = function (value) {
+*/
+proto.protocol.Transaction.prototype.setRawData = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
+
 
 /**
  * Clears the message field making it undefined.
  * @return {!proto.protocol.Transaction} returns this
  */
-proto.protocol.Transaction.prototype.clearRawData = function () {
+proto.protocol.Transaction.prototype.clearRawData = function() {
   return this.setRawData(undefined);
 };
+
 
 /**
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.protocol.Transaction.prototype.hasRawData = function () {
+proto.protocol.Transaction.prototype.hasRawData = function() {
   return jspb.Message.getField(this, 1) != null;
 };
+
 
 /**
  * repeated bytes signature = 2;
  * @return {!(Array<!Uint8Array>|Array<string>)}
  */
-proto.protocol.Transaction.prototype.getSignatureList = function () {
+proto.protocol.Transaction.prototype.getSignatureList = function() {
   return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 2));
 };
+
 
 /**
  * repeated bytes signature = 2;
  * This is a type-conversion wrapper around `getSignatureList()`
  * @return {!Array<string>}
  */
-proto.protocol.Transaction.prototype.getSignatureList_asB64 = function () {
-  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(this.getSignatureList()));
+proto.protocol.Transaction.prototype.getSignatureList_asB64 = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
+      this.getSignatureList()));
 };
+
 
 /**
  * repeated bytes signature = 2;
@@ -2250,70 +2550,76 @@ proto.protocol.Transaction.prototype.getSignatureList_asB64 = function () {
  * This is a type-conversion wrapper around `getSignatureList()`
  * @return {!Array<!Uint8Array>}
  */
-proto.protocol.Transaction.prototype.getSignatureList_asU8 = function () {
-  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(this.getSignatureList()));
+proto.protocol.Transaction.prototype.getSignatureList_asU8 = function() {
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+      this.getSignatureList()));
 };
+
 
 /**
  * @param {!(Array<!Uint8Array>|Array<string>)} value
  * @return {!proto.protocol.Transaction} returns this
  */
-proto.protocol.Transaction.prototype.setSignatureList = function (value) {
+proto.protocol.Transaction.prototype.setSignatureList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @param {number=} opt_index
  * @return {!proto.protocol.Transaction} returns this
  */
-proto.protocol.Transaction.prototype.addSignature = function (value, opt_index) {
+proto.protocol.Transaction.prototype.addSignature = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
+
 
 /**
  * Clears the list making it empty but non-null.
  * @return {!proto.protocol.Transaction} returns this
  */
-proto.protocol.Transaction.prototype.clearSignatureList = function () {
+proto.protocol.Transaction.prototype.clearSignatureList = function() {
   return this.setSignatureList([]);
 };
+
 
 /**
  * repeated Result ret = 5;
  * @return {!Array<!proto.protocol.Transaction.Result>}
  */
-proto.protocol.Transaction.prototype.getRetList = function () {
+proto.protocol.Transaction.prototype.getRetList = function() {
   return /** @type{!Array<!proto.protocol.Transaction.Result>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.protocol.Transaction.Result, 5)
-  );
+    jspb.Message.getRepeatedWrapperField(this, proto.protocol.Transaction.Result, 5));
 };
+
 
 /**
  * @param {!Array<!proto.protocol.Transaction.Result>} value
  * @return {!proto.protocol.Transaction} returns this
- */
-proto.protocol.Transaction.prototype.setRetList = function (value) {
+*/
+proto.protocol.Transaction.prototype.setRetList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
+
 
 /**
  * @param {!proto.protocol.Transaction.Result=} opt_value
  * @param {number=} opt_index
  * @return {!proto.protocol.Transaction.Result}
  */
-proto.protocol.Transaction.prototype.addRet = function (opt_value, opt_index) {
+proto.protocol.Transaction.prototype.addRet = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.protocol.Transaction.Result, opt_index);
 };
+
 
 /**
  * Clears the list making it empty but non-null.
  * @return {!proto.protocol.Transaction} returns this
  */
-proto.protocol.Transaction.prototype.clearRetList = function () {
+proto.protocol.Transaction.prototype.clearRetList = function() {
   return this.setRetList([]);
 };
 
-goog.object.extend(exports, proto.protocol);
 
-export default proto.protocol;
+goog.object.extend(exports, proto.protocol);

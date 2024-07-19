@@ -11,13 +11,11 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import jspb from '../../index';
+var jspb = require('google-protobuf');
 var goog = jspb;
-var global = function () {
-  return this || window || global || self || Function('return this')();
-}.call(null);
+var global = (function() { return this || window || global || self || Function('return this')(); }).call(null);
 
-import core_Tron_pb from '../Tron_pb';
+var core_Tron_pb = require('../../core/Tron_pb.js');
 goog.object.extend(proto, core_Tron_pb);
 goog.exportSymbol('proto.protocol.TriggerSmartContract', null, global);
 /**
@@ -30,7 +28,7 @@ goog.exportSymbol('proto.protocol.TriggerSmartContract', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.protocol.TriggerSmartContract = function (opt_data) {
+proto.protocol.TriggerSmartContract = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.protocol.TriggerSmartContract, jspb.Message);
@@ -42,60 +40,64 @@ if (goog.DEBUG && !COMPILED) {
   proto.protocol.TriggerSmartContract.displayName = 'proto.protocol.TriggerSmartContract';
 }
 
+
+
 if (jspb.Message.GENERATE_TO_OBJECT) {
-  /**
-   * Creates an object representation of this proto.
-   * Field names that are reserved in JavaScript and will be renamed to pb_name.
-   * Optional fields that are not set will be set to undefined.
-   * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
-   * For the list of reserved names please see:
-   *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
-   * @param {boolean=} opt_includeInstance Deprecated. whether to include the
-   *     JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @return {!Object}
-   */
-  proto.protocol.TriggerSmartContract.prototype.toObject = function (opt_includeInstance) {
-    return proto.protocol.TriggerSmartContract.toObject(opt_includeInstance, this);
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.protocol.TriggerSmartContract.prototype.toObject = function(opt_includeInstance) {
+  return proto.protocol.TriggerSmartContract.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.protocol.TriggerSmartContract} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.protocol.TriggerSmartContract.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    ownerAddress: msg.getOwnerAddress_asB64(),
+    contractAddress: msg.getContractAddress_asB64(),
+    callValue: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    data: msg.getData_asB64(),
+    callTokenValue: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    tokenId: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
-  /**
-   * Static version of the {@see toObject} method.
-   * @param {boolean|undefined} includeInstance Deprecated. Whether to include
-   *     the JSPB instance for transitional soy proto support:
-   *     http://goto/soy-param-migration
-   * @param {!proto.protocol.TriggerSmartContract} msg The msg instance to transform.
-   * @return {!Object}
-   * @suppress {unusedLocalVariables} f is only used for nested messages
-   */
-  proto.protocol.TriggerSmartContract.toObject = function (includeInstance, msg) {
-    var f,
-      obj = {
-        ownerAddress: msg.getOwnerAddress_asB64(),
-        contractAddress: msg.getContractAddress_asB64(),
-        callValue: jspb.Message.getFieldWithDefault(msg, 3, 0),
-        data: msg.getData_asB64(),
-        callTokenValue: jspb.Message.getFieldWithDefault(msg, 5, 0),
-        tokenId: jspb.Message.getFieldWithDefault(msg, 6, 0)
-      };
-
-    if (includeInstance) {
-      obj.$jspbMessageInstance = msg;
-    }
-    return obj;
-  };
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
 }
+
 
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.protocol.TriggerSmartContract}
  */
-proto.protocol.TriggerSmartContract.deserializeBinary = function (bytes) {
+proto.protocol.TriggerSmartContract.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.protocol.TriggerSmartContract();
+  var msg = new proto.protocol.TriggerSmartContract;
   return proto.protocol.TriggerSmartContract.deserializeBinaryFromReader(msg, reader);
 };
+
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
@@ -104,54 +106,56 @@ proto.protocol.TriggerSmartContract.deserializeBinary = function (bytes) {
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
  * @return {!proto.protocol.TriggerSmartContract}
  */
-proto.protocol.TriggerSmartContract.deserializeBinaryFromReader = function (msg, reader) {
+proto.protocol.TriggerSmartContract.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
     }
     var field = reader.getFieldNumber();
     switch (field) {
-      case 1:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setOwnerAddress(value);
-        break;
-      case 2:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setContractAddress(value);
-        break;
-      case 3:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setCallValue(value);
-        break;
-      case 4:
-        var value = /** @type {!Uint8Array} */ (reader.readBytes());
-        msg.setData(value);
-        break;
-      case 5:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setCallTokenValue(value);
-        break;
-      case 6:
-        var value = /** @type {number} */ (reader.readInt64());
-        msg.setTokenId(value);
-        break;
-      default:
-        reader.skipField();
-        break;
+    case 1:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setOwnerAddress(value);
+      break;
+    case 2:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setContractAddress(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCallValue(value);
+      break;
+    case 4:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setData(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setCallTokenValue(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTokenId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
     }
   }
   return msg;
 };
 
+
 /**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.protocol.TriggerSmartContract.prototype.serializeBinary = function () {
+proto.protocol.TriggerSmartContract.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
   proto.protocol.TriggerSmartContract.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
+
 
 /**
  * Serializes the given message to binary data (in protobuf wire
@@ -160,50 +164,72 @@ proto.protocol.TriggerSmartContract.prototype.serializeBinary = function () {
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.protocol.TriggerSmartContract.serializeBinaryToWriter = function (message, writer) {
+proto.protocol.TriggerSmartContract.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getOwnerAddress_asU8();
   if (f.length > 0) {
-    writer.writeBytes(1, f);
+    writer.writeBytes(
+      1,
+      f
+    );
   }
   f = message.getContractAddress_asU8();
   if (f.length > 0) {
-    writer.writeBytes(2, f);
+    writer.writeBytes(
+      2,
+      f
+    );
   }
   f = message.getCallValue();
   if (f !== 0) {
-    writer.writeInt64(3, f);
+    writer.writeInt64(
+      3,
+      f
+    );
   }
   f = message.getData_asU8();
   if (f.length > 0) {
-    writer.writeBytes(4, f);
+    writer.writeBytes(
+      4,
+      f
+    );
   }
   f = message.getCallTokenValue();
   if (f !== 0) {
-    writer.writeInt64(5, f);
+    writer.writeInt64(
+      5,
+      f
+    );
   }
   f = message.getTokenId();
   if (f !== 0) {
-    writer.writeInt64(6, f);
+    writer.writeInt64(
+      6,
+      f
+    );
   }
 };
 
+
 /**
  * optional bytes owner_address = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.TriggerSmartContract.prototype.getOwnerAddress = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ''));
+proto.protocol.TriggerSmartContract.prototype.getOwnerAddress = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
+
 
 /**
  * optional bytes owner_address = 1;
  * This is a type-conversion wrapper around `getOwnerAddress()`
  * @return {string}
  */
-proto.protocol.TriggerSmartContract.prototype.getOwnerAddress_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getOwnerAddress()));
+proto.protocol.TriggerSmartContract.prototype.getOwnerAddress_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getOwnerAddress()));
 };
+
 
 /**
  * optional bytes owner_address = 1;
@@ -212,34 +238,40 @@ proto.protocol.TriggerSmartContract.prototype.getOwnerAddress_asB64 = function (
  * This is a type-conversion wrapper around `getOwnerAddress()`
  * @return {!Uint8Array}
  */
-proto.protocol.TriggerSmartContract.prototype.getOwnerAddress_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getOwnerAddress()));
+proto.protocol.TriggerSmartContract.prototype.getOwnerAddress_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getOwnerAddress()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.TriggerSmartContract} returns this
  */
-proto.protocol.TriggerSmartContract.prototype.setOwnerAddress = function (value) {
+proto.protocol.TriggerSmartContract.prototype.setOwnerAddress = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
+
 /**
  * optional bytes contract_address = 2;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.TriggerSmartContract.prototype.getContractAddress = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ''));
+proto.protocol.TriggerSmartContract.prototype.getContractAddress = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
+
 
 /**
  * optional bytes contract_address = 2;
  * This is a type-conversion wrapper around `getContractAddress()`
  * @return {string}
  */
-proto.protocol.TriggerSmartContract.prototype.getContractAddress_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getContractAddress()));
+proto.protocol.TriggerSmartContract.prototype.getContractAddress_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getContractAddress()));
 };
+
 
 /**
  * optional bytes contract_address = 2;
@@ -248,50 +280,58 @@ proto.protocol.TriggerSmartContract.prototype.getContractAddress_asB64 = functio
  * This is a type-conversion wrapper around `getContractAddress()`
  * @return {!Uint8Array}
  */
-proto.protocol.TriggerSmartContract.prototype.getContractAddress_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getContractAddress()));
+proto.protocol.TriggerSmartContract.prototype.getContractAddress_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getContractAddress()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.TriggerSmartContract} returns this
  */
-proto.protocol.TriggerSmartContract.prototype.setContractAddress = function (value) {
+proto.protocol.TriggerSmartContract.prototype.setContractAddress = function(value) {
   return jspb.Message.setProto3BytesField(this, 2, value);
 };
+
 
 /**
  * optional int64 call_value = 3;
  * @return {number}
  */
-proto.protocol.TriggerSmartContract.prototype.getCallValue = function () {
+proto.protocol.TriggerSmartContract.prototype.getCallValue = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.TriggerSmartContract} returns this
  */
-proto.protocol.TriggerSmartContract.prototype.setCallValue = function (value) {
+proto.protocol.TriggerSmartContract.prototype.setCallValue = function(value) {
   return jspb.Message.setProto3IntField(this, 3, value);
 };
+
 
 /**
  * optional bytes data = 4;
  * @return {!(string|Uint8Array)}
  */
-proto.protocol.TriggerSmartContract.prototype.getData = function () {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ''));
+proto.protocol.TriggerSmartContract.prototype.getData = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
+
 
 /**
  * optional bytes data = 4;
  * This is a type-conversion wrapper around `getData()`
  * @return {string}
  */
-proto.protocol.TriggerSmartContract.prototype.getData_asB64 = function () {
-  return /** @type {string} */ (jspb.Message.bytesAsB64(this.getData()));
+proto.protocol.TriggerSmartContract.prototype.getData_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getData()));
 };
+
 
 /**
  * optional bytes data = 4;
@@ -300,50 +340,55 @@ proto.protocol.TriggerSmartContract.prototype.getData_asB64 = function () {
  * This is a type-conversion wrapper around `getData()`
  * @return {!Uint8Array}
  */
-proto.protocol.TriggerSmartContract.prototype.getData_asU8 = function () {
-  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(this.getData()));
+proto.protocol.TriggerSmartContract.prototype.getData_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getData()));
 };
+
 
 /**
  * @param {!(string|Uint8Array)} value
  * @return {!proto.protocol.TriggerSmartContract} returns this
  */
-proto.protocol.TriggerSmartContract.prototype.setData = function (value) {
+proto.protocol.TriggerSmartContract.prototype.setData = function(value) {
   return jspb.Message.setProto3BytesField(this, 4, value);
 };
+
 
 /**
  * optional int64 call_token_value = 5;
  * @return {number}
  */
-proto.protocol.TriggerSmartContract.prototype.getCallTokenValue = function () {
+proto.protocol.TriggerSmartContract.prototype.getCallTokenValue = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.TriggerSmartContract} returns this
  */
-proto.protocol.TriggerSmartContract.prototype.setCallTokenValue = function (value) {
+proto.protocol.TriggerSmartContract.prototype.setCallTokenValue = function(value) {
   return jspb.Message.setProto3IntField(this, 5, value);
 };
+
 
 /**
  * optional int64 token_id = 6;
  * @return {number}
  */
-proto.protocol.TriggerSmartContract.prototype.getTokenId = function () {
+proto.protocol.TriggerSmartContract.prototype.getTokenId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
+
 
 /**
  * @param {number} value
  * @return {!proto.protocol.TriggerSmartContract} returns this
  */
-proto.protocol.TriggerSmartContract.prototype.setTokenId = function (value) {
+proto.protocol.TriggerSmartContract.prototype.setTokenId = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
 };
 
-goog.object.extend(exports, proto.protocol);
 
-export default proto.protocol;
+goog.object.extend(exports, proto.protocol);

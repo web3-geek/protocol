@@ -5,15 +5,17 @@
   "private": "true",
   "main": "vite.config.js",
   "scripts": {
-    "build": "rollup --config rollup.config.mjs",
+    "build": "sh generate.sh && rollup --config rollup.config.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.24.8",
-    "@rollup/plugin-babel": "^6.0.4",
+    "@babel/generator": "^7.24.10",
+    "@babel/parser": "^7.24.8",
+    "@babel/traverse": "^7.24.8",
+    "@babel/types": "^7.24.9",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/pluginutils": "^5.1.0",

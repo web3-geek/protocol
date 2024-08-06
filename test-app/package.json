@@ -1,0 +1,21 @@
+{
+  "name": "test-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:cjs": "vite build --config vite.cjs.config.js",
+    "build:esm": "vite build --config vite.esm.config.js",
+    "preview": "vite preview",
+    "analyze:esm": "npx vite-bundle-visualizer -c vite.esm.config.js",
+    "analyze:cjs": "npx vite-bundle-visualizer -c vite.cjs.config.js"
+  },
+  "devDependencies": {
+    "vite": "^5.3.4",
+    "vite-plugin-require": "^1.2.14"
+  },
+  "dependencies": {
+    "google-protobuf": "^3.21.4"
+  }
+}
